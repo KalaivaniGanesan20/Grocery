@@ -1,0 +1,118 @@
+.logo
+{
+  width:40%;
+}
+body
+{
+  width:100%;
+}
+.quotebody
+{
+   margin-left: 10px;
+   align-items: center;
+}
+.content
+{
+  font-size: 22px;
+}
+.brandimage
+{
+  width:20%;
+  margin-left:25px;
+  border-radius: 15px;
+  box-shadow: 3px 3px rgb(106, 96, 96);
+}
+.brandimage img{
+  border-radius: 15px;
+}
+.carousel-item img
+{
+  border-radius:50px;
+  height:500px;
+}
+.carousel
+{
+  margin-left:40%;
+  margin-top: -35%;
+}
+.icarousel
+{
+  margin-left:20%;
+}
+.icarousel
+button
+{
+  border-radius:10px;
+  margin-top:10px;
+  color:black;
+  font-weight:bold;
+  margin-left: 20px;
+}
+
+h6{
+  color: rgb(32, 48, 87);
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.4);
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+  border: 3px solid #f1f1f1;
+  width:90%;
+  height:100%;
+  margin-left:40px;
+}
+.hidden {
+  display: none;
+}
+.offertemplate
+{
+  width: 70%;
+  height: 50%;
+  margin-left: 15%;
+  margin-top: 40px;
+}
+.offertemplate h1,.offertemplate h3
+{
+  color: rgb(189, 26, 69);
+  font-weight: bold;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: 70px;
+}
+.offertemplate img{
+  margin-left: 50%;
+  margin-top: -30%;
+}
+.offertemplate span{
+  color: rgb(111, 215, 6);
+  font-weight: bold;
+  font-family:'Times New Roman', Times, serif;
+  font-size: 50px;
+}
+
+.timer
+{
+  display: flex;
+  flex-direction:row;
+  margin-top: 30px;
+}
+#box
+{
+  background-color: rgb(12, 10, 10);
+  width: 10%;
+  height: 100px;
+  margin-left: 20px;
+  color: antiquewhite;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+.testimonial-item
+{
+  margin-left:20px;
+}
+.about-img
+{
+  margin-top: 10px;
+  margin-right: 20px;
+}

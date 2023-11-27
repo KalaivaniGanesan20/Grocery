@@ -1,0 +1,271 @@
+<router-outlet></router-outlet>
+
+<body class="bg-light bg-icon">
+<div class="offertemplate" *ngIf="offer.isofferexit===true">
+ <h1>{{offer.offername}}</h1>
+ <h3>{{offer.rate}}%</h3>
+ <span>time left : {{offer.distance}}ms</span>
+ <div class="timer">
+  <div id="box">
+    {{offer.day}}
+   <p> Day</p>
+  </div>
+  <div id="box">
+    {{offer.hours}}
+     <p>Hours</p>
+  </div>
+  <div id="box">
+    {{offer.minutes}}
+    <p>Minutes</p>
+  </div>
+  <div id="box">
+    {{offer.seconds}}
+    <p>Seconds</p>
+  </div>
+</div>
+<img src="https://t4.ftcdn.net/jpg/03/68/28/91/360_F_368289139_vuM1SbUKDunGVNAFQ3vIZmQnLFyoeCtQ.jpg"></div>
+ <!-- Carousel Start -->
+ <div class="bg-icon bg-light"  *ngIf="offer.getstatus()" [ngClass]="{ 'hidden':offer.iscontentdisplay }">
+  <div>
+    <div class="quote" style="margin-top: 20px;">
+      <div class="quote-item" style="margin-left: 15%;">
+          <img style="width:80%;height:400px; filter:blur(1px)" src={{data.url}} alt="Image">
+          <div class="carousel-caption">
+              <div class="container">
+                  <div class="row justify-content-start">
+                      <div class="col quotebody">
+                          <h6 class="display-2 mb-5 animated slideInDown">{{data.quote}}</h6>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <img class="logo" src="assets/img/global-delivery.gif">
+</div>
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+
+  <div class="carousel-inner">
+    <div class="carousel-item active w-100">
+      <img src="https://www.freshproduce.com/siteassets/images/large-tile-images/cartonsoffruit.jpg" class="d-block w-100" alt="...">
+
+    </div>
+    <div class="carousel-item w-100">
+      <img src="https://himalayawellness.co.za/cdn/shop/files/SA-Face-Care-Banner_a9adc672-a1bd-4806-938f-8a8dcddddfe4.jpg?v=1660812972&width=2400" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item w-100">
+      <img src="https://www.simplyorganic.com/sites/default/files/styles/720x360/public/acquiadam/2022-04/bottled-spices_1440x380%20v2.jpg?itok=QQ95_XHq" class="d-block w-100" alt="...">
+
+    </div>
+
+    <div class="carousel-item w-100">
+      <img src="https://www.bakingbusiness.com/ext/resources/2021/4/AmazonAplentyProducts_Lead.jpg?height=667&t=1618336892&width=1080" class="d-block w-100" alt="...">
+  </div>
+  <div class="carousel-item w-100">
+    <img src="https://images.fastcompany.net/image/upload/w_596,c_limit,q_auto:best,f_auto/wp-cms/uploads/2021/04/i-7-make-your-spring-cleaning-green-with-these-7-nontoxic-eco-friendly-brands-90618557-clean-cult-home-mosaic-bundle.jpg" class="d-block w-100" alt="...">
+  </div>
+</div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next" style="margin-right:20px;">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+  <div class="icarousel">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" class="btn btn-outline-primary" aria-label="Slide 1">Fruits & Veges</button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"class="active" aria-label="Slide 2" class="btn btn-outline-primary">Herbal Products</button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"class="active" aria-label="Slide 3" class="btn btn-outline-primary">Spicies</button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" class="active" aria-label="Slide 4" class="btn btn-outline-primary">Snacks & Bakery</button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" class="active" aria-label="Slide 5" class="btn btn-outline-primary">Cleaning Products</button>
+
+  </div>
+</div>
+<!-- Carousel End -->
+
+ <!-- About Start -->
+
+ <div class="container-xxl py-5">
+  <div class="container">
+      <div class="row g-5 align-items-center">
+          <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+              <div class="about-img position-relative overflow-hidden p-5 pe-0">
+                  <img class="img-fluid w-75" src="https://st3.depositphotos.com/10638998/14219/i/450/depositphotos_142198936-stock-photo-woman-holding-grocery-bag.jpg">
+              </div>
+          </div>
+          <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+              <h1 class="display-5 mb-4">Best Grocery Products</h1>
+              <p class="content mb-4">Grocery stores are a destination for consumers who need to purchase food and household products for both everyday use and special occasions. The wide selection of products and brands, as well as high inventory levels, allow consumers to shop the goods that their household may need for a significant period of time.</p>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- About End -->
+
+<!--categories-->
+<div class="container-fluid py-6 mb-5">
+      <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+          <h1 class="display-5 mb-3">Categories</h1></div>
+<div class="container-xxl py-5">
+  <div class="container">
+      <div class="row g-0 gx-5 align-items-end">
+          <div class="col-lg text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">
+            <div id="tab-1" class="tab-pane fade show p-0 active">
+              <div class="row g-2">
+                  <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                      <div class="product-item h-50">
+                          <div class="position-relative bg-light overflow-hidden">
+                              <img class="img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbnL5g_oquV-oRvYkWogl-VyBO2ya3VCkRUA&usqp=CAU" alt="">
+                              <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
+                          </div>
+                          <div class="text-center p-4">
+                              <p>Fruits/Veges</p>
+                             </div>
+                      </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="product-item">
+                        <div class="position-relative bg-light overflow-hidden">
+                            <img class="img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVEMINlDLzugXNlG67EEI2ShuXU3iy7aZLxg&usqp=CAU" alt="">
+                            <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
+                        </div>
+                        <div class="text-center p-4">
+                            <p>Grains/Flour</p>
+                           </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                  <div class="product-item">
+                      <div class="position-relative bg-light overflow-hidden">
+                          <img class="img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5mSbDopuzU_7LOG92Fp6tmq0mMa5WUYmUgQ&usqp=CAU" alt="">
+                          <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
+                      </div>
+                      <div class="text-center p-4">
+                          <p>HouseHolds</p>
+                         </div>
+                  </div>
+              </div> <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="product-item">
+                    <div class="position-relative bg-light overflow-hidden">
+                        <img class="img-fluid h-25" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQT_UtTf7ryujMy2hqRxY3zzAFHbohUS2sSMGInBiRY8zOE5TNRqE0KTBoQ4Ou_ur6F5M&usqp=CAU" alt="">
+                        <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
+                    </div>
+                    <div class="text-center p-4">
+                        <p>Meat/Flesh</p>
+                       </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+              <div class="product-item">
+                  <div class="position-relative bg-light overflow-hidden">
+                      <img class="img-fluid" src="https://www.snackandbakery.com/ext/resources/ci/2022/05/12/SSE22-Snacks-Feature-Image.jpg?1670345825" alt="">
+                      <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
+                  </div>
+                  <div class="text-center p-4">
+                      <p>Snacks/Bakery</p>
+                     </div>
+              </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+            <div class="product-item">
+                <div class="position-relative bg-light overflow-hidden">
+                    <img class="img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLfZbdLIYu6a57W8xYChY132vgPTmRXrq5rw&usqp=CAU" alt="">
+                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
+                </div>
+                <div class="text-center p-4">
+                    <p>Beauty Product</p>
+                   </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+          <div class="product-item">
+              <div class="position-relative bg-light overflow-hidden">
+                  <img class="img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS25Fz0OsDLnv-thEYCGHOvCt44MuBOQXscwg&usqp=CAU" alt="">
+                  <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
+              </div>
+              <div class="text-center p-4">
+                  <p>Dairy Products</p>
+                 </div>
+             </div>
+        </div>
+      <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+        <div class="product-item">
+            <div class="position-relative bg-light overflow-hidden">
+                <img class="img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvIXFVkmXqV0RZMspZOv539V2KoaJZ-gz_Xg&usqp=CAU" alt="">
+                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
+            </div>
+            <div class="text-center p-4">
+                <p>Stationery items</p>
+               </div>
+            </div>
+         </div>
+            </div>
+           </div>
+          </div>
+
+      </div>
+      </div><br>
+      <div class="col-12 text-center">
+        <a class="btn btn-primary rounded-pill py-3 px-5" routerLink="/products">Browse More Products</a>
+    </div>
+      </div>
+<!-- Product End -->
+
+<!--categories end-->
+
+<!--Brands-->
+<div class="container-fluid py-6 mb-5">
+  <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+      <h1 class="display-5 mb-3">Top Brands</h1></div>
+<div class="container-xxl py-5">
+<div class="container">
+  <div class="row g-0 gx-5 align-items-end">
+      <div class="col-lg text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">
+        <div id="tab-1" class="tab-pane fade show p-0 active">
+          <div class="row g-2 w-100" style="margin-left:80px">
+         <div class="brandimage" ><img class="w-100"  src="https://static.india.com/wp-content/uploads/2023/05/Amul-Aavin-.jpg?impolicy=Medium_Resize&w=1200&h=1200"></div>
+         <div class="brandimage"><img class="w-100" src="https://m.media-amazon.com/images/S/aplus-media/sota/e0a80f8d-6fb4-4a97-844b-bc8ee902f98e.__CR0,2,300,300_PT0_SX300_V1___.png"></div>
+         <div class="brandimage"><img class="w-100" src="https://assets.upstox.com/content/dam/aem-content-integration/assets/images/logos/BRITANNIA/BRITANNIA.png"></div>
+         <div class="brandimage"><img class="w-100" src="https://brandstruck.co/wp-content/uploads/2017/03/ARIEL-LOGO.png"></div>
+         <div class="brandimage"><img class="w-100" src="https://m.media-amazon.com/images/I/41opmhhlcUL.jpg"></div>
+         <div class="brandimage"><img class="w-100" src="https://brandyuva.in/wp-content/uploads/2019/08/aashirvaad-atta-brand-marketing-strategies.jpg"></div>
+         <div class="brandimage"><img class="w-100" src="https://cdn.sanity.io/images/92ui5egz/production/b23b2ad9b7c02ebfbcd2c8c8e98029abe227cf6a-280x280.jpg?w=375&h=375&fit=crop&auto=format"></div>
+         <div class="brandimage"><img class="w-100 " src="https://brandstruck.co/wp-content/uploads/2018/03/Cadbury-brand-strategy-positioning.jpg"></div>
+        </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--Brands end-->
+
+<!-- Testimonial Start -->
+<div class="container-fluid py-6 mb-5">
+  <div class="container">
+      <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+          <h1 class="display-5 mb-3">Customer Review</h1>
+      </div>
+      <div class="testimonial-carousel wow fadeInUp row"  data-wow-delay="0.1s">
+        <ng-container *ngFor="let feedback of Orderfeedack">
+          <div class="testimonial-item position-relative bg-white p-5 mt-4 w-50 col">
+              <i class="fa fa-quote-left fa-3x text-primary position-absolute top-0 start-0 mt-n4 ms-5"></i>
+              <p class="mb-4">{{feedback.comment}}</p>
+              <div class="d-flex align-items-center">
+                  <div class="ms-3">
+                      <h5 class="mb-1">Client Name</h5>
+                      <span>{{feedback.username}}</span>
+                  </div>
+              </div>
+          </div>
+        </ng-container>
+      </div>
+  </div>
+</div>
+<!-- Testimonial End -->
+

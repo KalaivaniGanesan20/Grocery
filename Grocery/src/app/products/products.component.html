@@ -1,0 +1,136 @@
+<!-- Offer Details -->
+<div *ngIf="myoffer.isofferexit" class="timer">
+  <div id="box">{{myoffer.day}}<p> Day</p>
+  </div>
+  <div id="box">{{myoffer.hours}}<p>Hours</p>
+  </div>
+  <div id="box">{{myoffer.minutes}}<p>Minutes</p>
+  </div>
+  <div id="box">{{myoffer.seconds}}<p>Seconds</p>
+  </div>
+</div>
+<!--Offer details Ended-->
+
+<section class="row">
+
+  <div class="container-xxl py-5 row">
+    <div class="container">
+      <div class="row g-0 gx-5 align-items-end category">
+        <div class="col-lg text-start text-lg-end wow slideInRightl" data-wow-delay="0.1s">
+          <ul class="nav nav-pills">
+            <li class="nav-item me-2" style="margin-left: -20px;">
+              <a class="btn btn-outline-primary border-2 active" (click)="getMyProduct()">All Products</a>
+            </li>
+            <li class="nav-item me-2">
+              <a class="btn btn-outline-primary border-2 " (click)="FilterProduct('FruitsVeges')">Fruits/Veges</a>
+            </li>
+            <li class="nav-item me-2">
+              <a class="btn btn-outline-primary border-2" (click)="FilterProduct('HouseHolds')">HouseHolds </a>
+            </li>
+            <li class="nav-item me-2">
+              <a class="btn btn-outline-primary border-2" (click)="FilterProduct('GrainsFlour')">Grains/Flour</a>
+            </li>
+            <li class="nav-item me-2">
+              <a class="btn btn-outline-primary border-2" (click)="FilterProduct('Masalas')">Masalas</a>
+            </li>
+            <li class="nav-item me-2">
+              <a class="btn btn-outline-primary border-2" (click)="FilterProduct('snacksBakery')">snacks/Bakery</a>
+            </li>
+            <li class="nav-item me-2">
+              <a class="btn btn-outline-primary border-2" (click)="FilterProduct('DairyProducts')">Dairy Products</a>
+            </li>
+            <li class="nav-item me-2">
+              <a class="btn btn-outline-primary border-2" (click)="FilterProduct('BeautyProduct')">BeautyProduct</a>
+            </li>
+            <li class="nav-item me-2">
+              <a class="btn btn-outline-primary border-2" (click)="FilterProduct('meatflesh')">Meat/flesh</a>
+            </li>
+            <li class="nav-item me-2">
+              <a class="btn btn-outline-primary border-2" (click)="FilterProduct('stationery')">Stationery</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-container">
+
+    <div class="grid-item item1" style="margin-left:30px;">
+      <div class="filters h-100 w-100">
+        <div class="form-check form-switch">
+          <input class="form-check-input " type="checkbox" id="flexSwitchCheckDefault" [(ngModel)]="filter" (input)="getfilter()">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Apply Filters</label>
+        </div>
+        <div class="search">
+          <input type="text" [(ngModel)]="searchvalue" (input)="Mysearch()" placeholder="Search">
+        </div>
+
+         <p-multiSelect [options]="brands" [(ngModel)]="selectedbrands" placeholder="Brands" (ngModelChange)="applyBrandFilter()"
+         [style]="{'width':'300px','margin-top':'5px','height':'40px','border':'2px solid green'}"   optionLabel="name"></p-multiSelect>
+
+      </div>
+    </div>
+    <div class="grid-item item2  w-100 h-100">
+      <div class=" products w-100 h-100">
+        <div id="tab-1" class="tab-pane fade show p-0 active">
+          <div class="row g-1">
+            <ng-container *ngIf="Myproduct==='null'">
+              <img class="nullimg w-75" src="https://cdn.dribbble.com/users/2382015/screenshots/6065978/media/1273880a5b9cc8008301089835f37939.gif">
+            </ng-container>
+
+            <ng-container class="product-tab" *ngFor="let i of Product | paginate:{
+        itemsPerPage:10,currentPage:pageNumber,totalItems:Totalproducts}">
+
+        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp w-25 product" data-wow-delay="0.7s"
+                *ngIf="(searchvalue === '' || i.productname.toLowerCase().includes(searchvalue))">
+
+                <div class="product-item w-75 h-100">
+
+                  <div class="position-relative image bg-light overflow-hidden w-100 h-50"
+                    style="margin-left:12px;background-color: white;">
+                    <img class="img-fluid w-100 h-100" data-toggle="tooltip" title="{{i.imageurl}}"
+                      src="WEBAPI/wwwroot/Image/{{i.imageurl}}" alt="">
+                    <div class="bg-outline-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
+                  </div>
+
+                  <div class="text-center p-4 h-25 row">
+                    <a class="d-block h6 mb-1">{{i.productname|uppercase}}</a>
+
+                    <span data-toggle="tooltip" title="get it in 1day"> <i class="fa fa-truck" aria-hidden="true"></i> delivered in 24hrs</span><br>
+
+                    <div *ngIf="i.stock>0"><span>Stock Available {{i.stock}}</span></div>
+                    <div *ngIf="i.stock==0"><span style="color:red">Sold Out</span></div>
+
+                    <p>{{i.quantity|weight}}
+
+                    <!-- custom pipe -->
+                    <!-- <p>{{myoffer.isofferexit}}</p> -->
+                    <span class="text-primary me-1"
+                      *ngIf="myoffer.isofferexit===true">{{i.price|offerpipe|currency:'INR' :'symbol'}}</span>
+                    <span class="text-primary me-1" *ngIf="myoffer.isofferexit===true"
+                      style="text-decoration: line-through;">{{i.price|currency:'INR' :'symbol'}}</span>
+                    <span class="text-primary me-1" *ngIf="myoffer.isofferexit===false">{{i.price|currency:'INR'
+                      :'symbol'}}</span>
+
+                    <div class="product-button ">
+                      <small class="text-center py-2">
+                        <button type="button" class="btn btn-outline-primary"
+                          routerLink="/Product_details/{{i.productname}}"><i
+                            class="fa fa-eye teel-colortext-primary me-2"></i>View Detail</button>
+                            <button type="button" class="btn btn-outline-primary" [disabled]="i.stock==0" (click)="addtocart(i)"><i
+                              class="fa fa-shopping-bag teal-colortext-primary me-2 "></i>Add To Cart</button>
+                      </small>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<pagination-controls class="text-center mypagination" (pageChange)="pageNumber=$event"></pagination-controls>

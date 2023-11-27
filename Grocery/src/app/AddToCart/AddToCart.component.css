@@ -1,0 +1,27 @@
+img
+{
+  width:250px;
+  height:200px;
+  margin-right:30%;
+}
+.cart-text
+{
+  margin-left: 15%;
+}
+.cartempty
+{
+  color:red;
+  font-size:45px;
+  margin-top:150px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-left: 20%;
+}
+.shopbutton
+{
+  width:30%;
+  margin-left:23%;
+  border-radius:10px;
+  border: 3px solid green;
+  font-weight: bold;
+  font-size: 20px;
+}

@@ -1,0 +1,46 @@
+.header
+{
+  background-color: rgb(218, 213, 213);
+  padding:10px 20px 20px 10px;
+  font-size: 16px;
+}
+.footer
+{
+  background-color: rgb(255, 255, 255);
+  padding:10px 10px 10px 10px;
+  font-size: 16px;
+  color:black;
+  text-align: center;
+}
+
+img{
+  width:75px;
+  height: 75px;
+  border-radius: 2px;
+  padding: 10px 10px ;
+}
+:host>>>.autocomplete
+{
+   border:none;
+   outline: none;
+   width:600px;
+   height:50px;
+   padding: 10px;
+   border-radius: 5px;
+}
+
+.content
+{
+  padding-left: 20px;
+  display: flex;
+  flex-direction:row;
+  font-size:16px;
+  justify-content: space-between;
+}
+.content p{margin-top: 10px; padding:10px;}
+button{
+  height:50px;
+  width:120px;
+  margin-top: 10px;
+  border-radius: 10px;
+}

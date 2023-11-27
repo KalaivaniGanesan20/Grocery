@@ -1,0 +1,84 @@
+<div>
+  <h1>Feedback/Queries</h1>
+<section class="Queries">
+  <div class="row">
+    <div class="col" style="margin-left:10%"><a (click)="getdata()">OrderFeedback</a></div>
+    <div class="col"><a (click)="getproductfeedback()">ProductFeedback</a></div>
+    <div class="col"><a (click)="getquery()">Queries</a></div>
+  </div>
+</section>
+
+
+<div *ngIf="show==='Order'">
+<table class="table table-striped w-50" >
+<thead>
+  <th></th>
+  <th>Id</th>
+  <th >PaymentId</th>
+    <th >UserId</th>
+    <th >Comments</th>
+    <th >Rating</th>
+</thead>
+<tbody  >
+  <tr   *ngFor="let i of OrderFeedback">
+    <td></td>
+    <td>{{i.id}}</td>
+    <td>{{i.paymentid}}</td>
+    <td>{{i.userid}}</td>
+    <td>{{i.comment}}</td>
+    <td>{{i.orderRating}}</td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+<div *ngIf="show==='Product'">
+<table class="table table-striped w-50" >
+  <thead >
+    <th></th>
+    <th>Id</th>
+      <th >UserId</th>
+      <th >ProductId</th>
+      <th >Comments</th>
+      <th>Rating</th>
+  </thead>
+  <tbody  >
+    <tr   *ngFor="let i of ProductFeedback">
+      <td></td>
+      <td>{{i.id}}</td>
+      <td>{{i.userid}}</td>
+      <td>{{i.productid}}</td>
+      <td>{{i.feedback}}</td>
+      <td>{{i.productRating}}</td>
+
+    </tr>
+  </tbody>
+  </table>
+</div>
+
+<div *ngIf="show==='Queries'" >
+  <table class="table table-striped w-50" >
+    <thead>
+      <th></th>
+      <th>Id</th>
+        <th >UserId</th>
+        <th >Query category</th>
+        <th >Query</th>
+        <th>Reply</th>
+        <th></th>
+    </thead>
+    <tbody >
+      <tr  *ngFor="let i of OrderFeedback">
+        <td></td>
+        <td>{{i.id}}</td>
+        <td>{{i.queryid}}</td>
+        <td>{{i.userid}}</td>
+        <td>{{i.querycategory}}</td>
+        <td>{{i.query}}</td>
+        <td>{{i.Reply}}</td>
+        <td><button class="btn btn-warning" style="border-radius:20px">Reply for Query</button></td>
+      </tr>
+    </tbody>
+    </table>
+  </div>
+</div>

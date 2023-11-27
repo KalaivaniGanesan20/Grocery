@@ -1,0 +1,60 @@
+<section class="w-100 h-75">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-xl-10">
+          <div class="card" style="border-radius: 1rem;">
+            <div class="row g-0 w-100 h-100">
+              <div class="col-md-6 col-lg-5 d-none d-md-block">
+                <img src="https://t3.ftcdn.net/jpg/01/56/06/62/360_F_156066210_2MMU1k8x3chdk7TU3X9ztMJi1jxhBBs4.jpg"
+                  alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem; height:100%"/>
+              </div>
+              <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                <div class="card-body p-4 p-lg-5 text-black">
+
+                  <form [formGroup]="feedbackForm" (ngSubmit)="postFeedback(feedbackForm.value)">
+
+                    <div class="d-flex align-items-center mb-3 pb-1">
+                      <i class="fas fa-comments fa-3x me-3" style="color: #06b77f;"></i>
+                      <span class="h1 fw-bold mb-0">Feedback</span>
+                    </div>
+                      <div *ngIf="feedbackForm.controls['paymentid'].invalid && feedbackForm.controls['paymentid'].touched">
+                      <small  style="color:red" *ngIf="feedbackForm.controls['paymentid'].errors?.['required']">Please enter paymentid</small>
+                     </div>
+                    <div class="form-outline mb-4">
+                      <input type="email" id="form2Example17" formControlName="paymentid"  class="form-control form-control-lg" />
+                      <label class="form-label" for="form2Example17">Payment Id</label>
+                    </div>
+                    <div *ngIf="feedbackForm.controls['userid'].invalid && feedbackForm.controls['userid'].touched">
+                      <small  style="color:red" *ngIf="feedbackForm.controls['userid'].errors?.['required']">Please enter userid</small>
+                     </div>
+                    <div class="form-outline mb-4">
+                      <input type="email" id="form2Example17" formControlName="userid" class="form-control form-control-lg" />
+                      <label class="form-label" for="form2Example17">User Id</label>
+                    </div>
+                    <div *ngIf="feedbackForm.controls['comment'].invalid && feedbackForm.controls['comment'].touched">
+                      <small  style="color:red" *ngIf="feedbackForm.controls['comment'].errors?.['required']">Please enter comments</small>
+                     </div>
+                    <div class="form-outline mb-4">
+                      <textarea type="text" id="form2Example17" formControlName="comment" class="form-control form-control-lg"></textarea>
+                      <label class="form-label" for="form2Example17">Feedback</label>
+                    </div>
+                    <div *ngIf="feedbackForm.controls['orderRating'].invalid && feedbackForm.controls['orderRating'].touched">
+                      <small  style="color:red" *ngIf="feedbackForm.controls['orderRating'].errors?.['required']">Please enter OrderRating</small>
+                     </div>
+                    <div class="form-outline mb-4">
+                      <input type="text" id="form2Example17" formControlName="orderRating" class="form-control form-control-lg" />
+                      <label class="form-label" for="form2Example17">Order Rating</label>
+                    </div>
+                    <div class="pt-1 mb-4">
+                      <button [disabled]="!feedbackForm.valid" class="btn btn-primary">Add Feedback</button>
+                      <button class="btn btn-danger" style="margin-left: 30%;" routerLink="/myorder">Not Now</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

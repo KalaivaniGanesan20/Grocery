@@ -1,0 +1,22 @@
+<p-autoComplete #search [(ngModel)]="searchvalue" [suggestions]="productList"
+ (completeMethod)="Mysearch($event)" field="pname" (onSelect)="Gotosearch($event)" placeholder="search for Product"
+  inputStyleClass="autocomplete" [showClear]="true">
+<ng-template pTemplate="header"><div class="header">Showing results for '{{searchvalue}}'</div>
+</ng-template>
+  <ng-template let-productList pTemplate="item" class="template"  [ngStyle]="{backgroundColor:'white'}" >
+    <div class="flex align-items-center"  [ngStyle]="{backgroundColor:'white',height:100}">
+      <div class="content">
+        <img src="WEBAPI/wwwroot/Image/{{productList.imageurl}}" [class]="'flag flag-' + productList.productname.toLowerCase()" />
+        <p>{{ productList.productname }}</p>
+        <p>{{productList.quantity|weight}}</p>
+        <p>{{productList.price|currency:'INR':'symbol'}}</p>
+        <p *ngIf="productList.stock==0" style="color:red">Sold Out</p>
+        <button class="btn btn-primary" [disabled]="productList.stock==0">Buy Now</button>
+    </div>
+    <div [ngStyle]="{backgroundColor:'rgb(180, 170, 170)',height:'1px'}"></div>
+  </div>
+</ng-template>
+
+<ng-template pTemplate="footer"><div class="footer"><a routerLink="products" (click)="ViewMore()">view more</a></div>
+</ng-template>
+</p-autoComplete>

@@ -1,0 +1,73 @@
+<section class="row">
+  <div class="col options">
+    <h5 (click)="paymentview('card')">Credit/Debit Card</h5>
+    <h5 (click)="paymentview('upi')">UPI</h5>
+  </div>
+
+  <div class="card-body p-4 p-lg-5 text-black w-50 col">
+    <form [formGroup]="payment" (ngSubmit)="payNow(payment.value,userid)" class="w-75">
+      <div *ngIf="paymentmode==='card'">
+        <div *ngIf="payment.controls['cardnumber'].invalid && payment.controls['cardnumber'].touched">
+          <small style="color:red" *ngIf="payment.controls['cardnumber'].errors?.['required']">Please enter card
+            number</small>
+          <small style="color:red" *ngIf="payment.controls['cardnumber'].errors?.['maxlength']">Please card number
+            should
+            be maximum 19 number</small>
+          <small style="color:red" *ngIf="payment.controls['cardnumber'].errors?.['minlength']">Please card number
+            should
+            be minimum 8 number</small>
+          <small style="color:red" *ngIf="payment.controls['cardnumber'].errors?.['pattern']">Please enter proper card
+            number Only digits allowed</small>
+        </div>
+        <div class="form-outline mb-2">
+          <label class="form-label">card Number</label>
+          <input type="text" formControlName="cardnumber" class="form-control form-control-lg" />
+        </div>
+        <div *ngIf="payment.controls['Expdate'].invalid && payment.controls['Expdate'].touched">
+          <small style="color:red" *ngIf="payment.controls['Expdate'].errors?.['required']">Please enter Expire
+            date</small>
+          <small style="color:red" *ngIf="payment.controls['Expdate'].errors?.['ExpDatevalidation']">Entered card date
+            is
+            Expired</small>
+        </div>
+        <div class="form-outline mb-2">
+          <label class="form-label">Exp Date</label>
+          <input type="date" formControlName="Expdate" class="form-control form-control-lg" />
+        </div>
+        <div *ngIf="payment.controls['cvvnumber'].invalid && payment.controls['cvvnumber'].touched">
+          <small style="color:red" *ngIf="payment.controls['cvvnumber'].errors?.['required']">Please enter
+            cvvnumber</small>
+          <small style="color:red" *ngIf="payment.controls['cvvnumber'].errors?.['maxlength']">Please card number should
+            be maximum 4 number</small>
+          <small style="color:red" *ngIf="payment.controls['cvvnumber'].errors?.['pattern']">Please enter proper
+            cvvnumber
+            Only digits allowed</small>
+        </div>
+        <div class="form-outline mb-2">
+          <label class="form-label">cvv Number</label>
+          <input type="text" formControlName="cvvnumber" class="form-control form-control-lg" />
+        </div>
+        <div class="pt-1 mb-4">
+          <button class="btn btn-primary w-100" [disabled]="payment.invalid"><b>Pay Now</b></button>
+        </div>
+      </div>
+</form>
+
+    <form [formGroup]="upi" (ngSubmit)="payNow(upi.value,userid)" *ngIf="paymentmode==='upi'" class="w-75">
+
+        <div class="form-outline mb-2">
+          <label class="form-label">Phone Number</label>
+          <input class="form-control form-control-lg" type="text" value={{loggedinuser.phonenumber}}/>
+        </div>
+
+        <div class="form-outline mb-2">
+          <label class="form-label">UPI ID</label>
+          <input type="text" formControlName="upicode" class="form-control form-control-lg" />
+        </div>
+        <div class="pt-1 mb-4">
+          <button class="btn btn-primary w-100" [disabled]="upi.invalid"><b>Pay Now</b></button>
+        </div>
+</form>
+
+  </div>
+</section>

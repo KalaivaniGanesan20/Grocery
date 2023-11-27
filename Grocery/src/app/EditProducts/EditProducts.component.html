@@ -1,0 +1,153 @@
+  <section class="w-100">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <p><span class="h2">Available Products</span><span class="h4"></span></p>
+
+          <!--search bar -->
+          <div class="search">
+            <input type="text" [(ngModel)]="searchvalue" (input)="mySearch()" placeholder="Search">
+          </div>
+
+         <!--searchbar end-->
+         <ng-container  *ngFor="let i of product">
+          <div class="card mb-4"  *ngIf="searchvalue===''|| i.productname.toLowerCase().includes(searchvalue)">
+            <div >
+            <div class="card-body p-4">
+              <div class="row align-items-center">
+                <div class="col-md-2">
+                  <img src="WEBAPI/wwwroot/Image/{{i.imageurl}}"
+                    class="img-fluid" alt="Generic placeholder image">
+                </div>
+                <div class="col-md-2 d-flex justify-content-center">
+                  <div>
+                    <p class="small text-muted mb-4 pb-2">Name</p>
+                    <p class="lead fw-normal mb-0">{{i.productname}}</p>
+                  </div>
+                </div>
+                <div class="col-md-2 d-flex justify-content-center">
+                  <div>
+                    <p class="small text-muted mb-4 pb-2">Quantity (in grams)</p>
+                    <p class="lead fw-normal mb-0">{{i.quantity}}</p>
+                  </div>
+                </div>
+                <div class="col-md-2 d-flex justify-content-center">
+                  <div>
+                    <p class="small text-muted mb-4 pb-2">Price</p>
+                    <p class="lead fw-normal mb-0">{{i.price}}</p>
+                  </div>
+                </div>
+                <div class="col-md-2 d-flex justify-content-center">
+                  <button type="button" (click)="deleteProduct(i.productid)" class="btn btn-dark btn-lg me-2">delete</button>
+                  <button type="button"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="update(i)" class="btn btn-warning btn-lg">update</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       </ng-container>
+       </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Update Product</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="Myproduct">
+            <div class="row">
+            <div class="mb-3 col">
+              <label for="id" class="form-label">Product ID:</label>
+              <input type="text" class="form-control"  formControlName="productid"  />
+            </div>
+            <div class="mb-3 col">
+              <label for="productname" class="form-label">Product Name:</label>
+            <input type="text" class="form-control" formControlName="productname" />
+          </div>
+            <div class="mb-3 col">
+              <label for="quantity" class="form-label">Quantity (in grams):</label>
+            <input type="text"  class="form-control" formControlName="quantity"/>
+            </div></div>
+            <div class="row">
+
+            <div class="mb-3 col">
+              <label for="price" class="form-label">Price:</label>
+            <input type="text" class="form-control" formControlName="price" />
+            </div>
+            <div class="mb-3 col">
+              <label for="price" class="form-label">Product details:</label>
+            <input type="text" class="form-control" formControlName="details" />
+            </div>
+
+            <div class="mb-3 col">
+              <label for="price" class="form-label">Stock available:</label>
+            <input class="form-control" formControlName="stock" />
+            </div>
+          </div>
+            <div class="row">
+              <div class="mb-3 col">
+                <label for="brand" class="form-label">Brand Name:</label>
+                <select class="form-select" formControlName="brand" value="select">
+                  <option *ngFor="let brand of brands" [value]="brand.brandName">{{brand.brandName}}</option>
+                </select>
+              </div>
+              <div class="mb-3 col">
+                <label for="price" class="form-label">Category:</label>
+                <select class="form-select" formControlName="category" value="select">
+                  <option *ngFor="let option of allcategory" [value]="option.categoryName">{{option.categoryName}}
+                  </option>
+                </select>
+              </div>
+              <div class="mb-3 col">
+                <label for="price" class="form-label">subCategory:</label>
+                <select class="form-select" formControlName="subcategory" value="select">
+                  <ng-container *ngFor="let option of allcategory">
+                    <ng-container *ngIf="option.categoryName===Myproduct.get('category')?.value">
+                      <option *ngFor="let value of option.subcategory" [value]="value.subcategoryname">
+                        {{value.subcategoryname}}</option>
+                    </ng-container></ng-container>
+                </select>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="price" class="form-label">Image:</label>
+              <input type="file" (change)="getfile($event,'image1')" formControlName="image" />
+            </div>
+            <div *ngIf="Myproduct.controls['image'].touched&& Myproduct.controls['image'].invalid">
+              <div *ngIf="Myproduct.controls['image'].errors?.['required']" style="color:red">Please choose an image.</div>
+              <div style="color:red" *ngIf="Myproduct.controls['image'].errors?.['invalidImageType']" ><span>Only JPEG, JPG, and PNG images are
+                allowed.</span></div>
+            </div>
+            <div class="row mb-3">
+              <label for="price" class="form-label">Image2:</label>
+              <input type="file" (change)="getfile($event,'image2')" formControlName="image2" />
+            </div>
+            <div *ngIf="Myproduct.controls['image2'].touched && Myproduct.controls['image2'].invalid">
+              <div *ngIf="Myproduct.controls['image2'].errors?.['required']" style="color:red">Please choose an image.</div>
+              <div *ngIf="Myproduct.controls['image2'].errors?.['invalidImageType']" style="color:red">Only JPEG, JPG, and PNG images are
+                allowed.</div>
+            </div>
+            <div class="row mb-3">
+              <label for="price" class="form-label">Image3:</label>
+              <input type="file" (change)="getfile($event,'image3')" formControlName="image3" />
+            </div>
+            <div *ngIf="Myproduct.controls['image3'].touched && Myproduct.controls['image3'].invalid">
+
+              <div *ngIf="Myproduct.controls['image3'].errors?.['required']" style="color:red">Please choose an image.</div>
+              <div *ngIf="Myproduct.controls['image3'].errors?.['invalidImageType']" style="color:red">Only JPEG, JPG, and PNG images are
+                allowed.</div>
+            </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" (click)="updateProduct()"  class="btn btn-primary">Update product</button>
+        </div>
+      </div>
+    </div>
+  </div>

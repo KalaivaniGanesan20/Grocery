@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@angular/core": "^16.0.4",
+    "sweetalert2": "^11.7.12"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.2"
+  }
+}

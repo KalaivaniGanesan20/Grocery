@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg" data-bs-theme="dark" style="background-color:rgb(130, 213, 7)">
+ <div class="Logo-content"> <a class="navbar-brand" routerLink="">
+   <img class="logo" src="https://static.vecteezy.com/system/resources/previews/006/639/368/original/green-food-truck-logo-illustration-free-vector.jpg">
+    g-mart</a></div>
+     <app-search  (searchemit)="SearchProduct($event)"></app-search>
+      <ul>
+        <li>
+          <a routerLink="products">ShopNow</a>
+        </li>
+        <li>
+          <a   routerLink="Admin" *ngIf="service.adminlogin()==='true'">AdminDashboard</a>
+        </li>
+        <li class="nav-item dropdown" *ngIf="service.adminlogin()==='false'">
+          <a  *ngIf="service.loggedin()===true"><i class="fas fa-user-circle fa-2x"><span style="font-size:17px;"></span></i></a>
+          <div class="dropdown-menu" style="background-color: rgb(247, 250, 249);">
+            <a class="dropdown-item" style="color:rgb(15, 17, 20)" routerLink="profile">Profile</a>
+            <a class="dropdown-item" style="color:rgb(15, 17, 20)" routerLink="myorder" >My order</a>
+            </div>
+        </li>
+        <li>
+          <a class="nav-link active" *ngIf="service.adminlogin()==='false'" routerLink="/AddToCart"><span style="color:white"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"><span style="font-size:15px;">{{cartcount}}</span></i></span></a>
+        </li>
+        <li >
+          <a *ngIf="service.loggedin()===false" routerLink="Login">Login</a>
+          <a class="dropdown-item"  *ngIf="service.loggedin()===true" (click)="service.logout()">Logout</a>
+        </li>
+       </ul>
+</nav>
+<router-outlet></router-outlet>

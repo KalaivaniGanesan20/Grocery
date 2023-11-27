@@ -1,0 +1,59 @@
+.progress-bar
+{
+  border-radius: 16px;
+}
+.Returned
+{
+  background-color: red;
+}
+.Cancelled
+{
+  background-color:rgb(184, 184, 4);
+
+}
+.text
+{
+  font-size: 18px;
+  font-weight: bold;
+}
+.Probar
+{
+  margin-left:50px;
+}
+.Track
+{
+  border:2px solid black;
+  width:50%;
+  height:30%;
+  margin-left:20%;
+}
+h1{
+  margin-left:50px;
+}
+.OrderDetails,
+.ProductDetails
+{
+  margin-left:40px;
+  margin-top: 30px;
+  font-size:20px;
+}
+.OrderDetails h3,
+.ProductDetails h3{
+  margin-left:20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+img{
+  width:70px;
+  height:60px;
+}
+h5{
+  margin-left:85%;
+}
+button
+{
+  border-radius: 20px;
+}
+.Order{
+  margin-top:120px;
+}

@@ -1,0 +1,61 @@
+<section style="background-color: #eee;">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card mb-4">
+          <div class="card-body text-center">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8VLpfFb9XJbgYtQqgbQODTNmQYqiS7r8ekw&usqp=CAU" style="width:30%;">
+            <h5 class="my-3">User ID : {{loggedinuserdata.id}}</h5>
+            <p class="text-muted mb-4">{{loggedinuserdata.fname}}</p>
+            <div class="d-flex justify-content-center mb-2">
+              <button type="button" class="btn btn-outline-success" style="border-radius: 50px;" routerLink="/myorder">View ShopHistory</button>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-4 mb-lg-0 w-100">
+          <div class="card-body p-0">
+            <ul class="list-group list-group-flush rounded-3">
+              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                <p class="mb-0">My Wallet</p>
+              </li>
+              <h4 style="margin-left: 10px; margin-top: 20px;">Balance : {{loggedinuserdata.mywallet|currency:'INR':'symbol'}}</h4>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Full Name</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{loggedinuserdata.firstname}}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Email</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{loggedinuserdata.emailid}}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Mobile</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{loggedinuserdata.phonenumber}}</p>
+              </div>
+            </div>
+            <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

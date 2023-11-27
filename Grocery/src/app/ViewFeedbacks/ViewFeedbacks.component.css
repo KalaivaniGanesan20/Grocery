@@ -1,0 +1,29 @@
+.table
+{
+  margin-left:20%;
+}
+.row
+{
+  margin-top: 20px;
+  width:50%;
+  margin-left:20%;
+  background-color: rgb(232, 141, 44);
+  height:70px;
+  align-items: center;
+  border-radius: 10px;
+  color:white;
+  font-weight: bold;
+  font-size:20px;
+  text-decoration: underline;
+}
+div{
+  font-size: 20px;
+}
+.Queries
+{
+  margin-top:10px;
+}
+h1{
+  margin-top: 20px;
+  margin-left: 10%;
+}

@@ -1,0 +1,125 @@
+<section class="vh-100" style="margin-top:-15%;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12">
+        <div class="card card-stepper text-black" style="border-radius: 16px;">
+
+          <div class="card-body p-5">
+
+            <ul id="progressbar-2" class="d-flex justify-content-between mx-0 mt-0 mb-5 px-0 pt-0 pb-2">
+              <li  class="step0 active text-center" id="step1"></li>
+              <li *ngIf="show==='address'" class="step0 text-muted text-center" id="step2"></li>
+              <li *ngIf="show==='delivery'|| show==='payment'" class="step0 active text-center" id="step2"></li>
+              <li *ngIf="show==='address' || show==='delivery'" class="step0 text-muted text-center" id="step3"></li>
+              <li *ngIf="show==='payment'" class="step0 active text-center" id="step3"></li>
+              <li *ngIf="show==='address'||show==='delivery'" class="step0 text-mute text-center" id="step4"></li>
+              <li *ngIf="show==='payment'" class="step0 active text-center" id="step4"></li>
+
+            </ul>
+
+            <div class="d-flex justify-content-between">
+              <div class="d-lg-flex align-items-center">
+                <i class="fas fa-home fa-3x me-lg-4 mb-3 mb-lg-0"></i>
+                <div>
+                  <p class="fw-bold mb-1">Delivery Address</p>
+                  <button class="btn btn-outline-primary" (click)="updateAddress()">update Address</button>
+                </div>
+              </div>
+              <div class="d-lg-flex align-items-center">
+                <i class="fas fa-clipboard-list fa-3x me-lg-4 mb-3 mb-lg-0"></i>
+                <div>
+                  <p class="fw-bold mb-1">Delivery Options</p>
+                  <button class="btn btn-outline-primary" (click)="updateDeliveryOption()">change</button>
+                </div>
+              </div>
+              <div class="d-lg-flex align-items-center">
+                <i class="fas fa-box-open fa-3x me-lg-4 mb-3 mb-lg-0"></i>
+                <div>
+                  <p class="fw-bold mb-1">Payment Option</p>
+                  <button class="btn btn-outline-primary" (click)="updatePaymentOption()">change</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="Address" *ngIf="show==='address'">
+  <div>
+    <h2>Area Details</h2>
+    <form  #AddressForm="ngForm">
+      <div class="row">
+        <div class="col-md-3 mb-2">
+          <label for="validationCustom01">Apartment/House No</label>
+          <input type="text" class="form-control" name="apartmentno" placeholder="eg.12/221" #apno=ngModel [(ngModel)]="apartmentno" required>
+
+        </div>
+        <div class="col-md-3 mb-2">
+          <label for="validationCustom02">Apartment Name</label>
+          <input type="text" class="form-control" name="apartmentName" placeholder="eg.Park Venu" #apName=ngModel [(ngModel)]="apartmentName" required>
+
+        </div>
+        <div class="col-md-3 mb-2">
+          <label for="validationCustomUsername">Area</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupPrepend">@</span>
+            </div>
+            <input type="text" class="form-control" name="area" placeholder="Ayanavaram" #areaname=ngModel [(ngModel)]="area" aria-describedby="inputGroupPrepend" required>
+
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-2">
+          <label for="validationCustom03">Street Details/Landmark</label>
+          <input type="text" class="form-control" name="street" #streetname=ngModel [(ngModel)]="street" placeholder="water tank Road" required>
+
+        </div>
+        <div class="col-md-2 mb-2">
+          <label for="validationCustom04">State</label>
+          <input type="text" class="form-control" name="state" #statename=ngModel [(ngModel)]="state" placeholder="TamilNadu" required>
+
+        </div>
+        <div class="col-md-2 mb-2">
+          <label for="validationCustom05">Zip</label>
+          <input type="text" class="form-control" name="pincode" #code=ngModel [(ngModel)]="pincode" placeholder="Zip" required>
+
+        </div>
+      </div>
+      <button class="btn btn-primary" type="submit"(click)="postAddress()">change Address</button>
+    </form>
+  </div>
+  </section>
+
+<section class="delivery" style="margin-top:-200px;" *ngIf="show==='delivery'">
+  <div class="row">
+    <div class="col">
+      <h4>Product</h4>
+      <h5>Totally {{cartcount}} items</h5>
+      <div class="row">
+        <div class="col" *ngFor="let item of cart">
+          <img src="WEBAPI/wwwroot/Image/{{item.imageurl}}">
+        </div>
+        <div  class="col" *ngIf="cartcount > 2===true">
+          <i class="fa fa-plus-square fa-3x" style="color:green;margin-top:10px" aria-hidden="true"></i>
+        </div>
+    </div>
+
+    </div>
+    <div class="col summary">
+      <h3><i class="fa fa-bookmark" style="color:green" aria-hidden="true"></i>
+        Order Summary</h3>
+        <p>Basket Value <span style="margin-left:120px;">{{amount|currency:'INR':'symbol'}}</span></p><hr>
+        <p>Total Amount Payable <span style="margin-left: 40px;">{{amount|currency:'INR':'symbol'}}</span></p><hr>
+    </div>
+  </div>
+  </section>
+
+<section style="margin-top:-20%;" *ngIf="show==='payment'">
+<app-payment></app-payment>
+</section>
+

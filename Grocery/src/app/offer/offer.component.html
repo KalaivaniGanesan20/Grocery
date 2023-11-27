@@ -1,0 +1,44 @@
+<div class="quotes">
+        <form #quotes="ngForm" class="w-25">
+          <h5 class="modal-title" id="exampleModalLabel">Todays Quotes</h5>
+          <div class="mb-3">
+            <label for="id" class="col-form-label">Quotes : </label>
+            <input type="text" class="form-control"   name="quote" #qoute=ngModel [(ngModel)]="quote">
+          </div>
+          <div class="mb-3">
+            <label for="id" class="col-form-label">Time limit (in minutes): </label>
+            <input type="text" class="form-control"   name="timelimit" #times=ngModel [(ngModel)]="timelimit" >
+          </div>
+          <div class="mb-3">
+            <label for="id" class="col-form-label">Date : </label>
+            <input type="date" class="form-control"   name="date" #todaydate=ngModel [(ngModel)]="date" >
+          </div>
+          <div class="mb-3">
+            <label for="price" class="col-form-label">Image:</label>
+            <input type="text" class="form-control" name="url"  #urls=ngModel [(ngModel)]="url"/>
+          </div>
+          <button type="button"  (click)="addquotes(quotes.value)" class="btn btn-primary">update quotes</button>
+        </form>
+</div>
+
+<div class="offer">
+<form #myoffer="ngForm" class="w-50">
+  <h5 class="modal-title" id="exampleModalLabel">Offer</h5>
+  <div class="mb-3">
+    <label for="id" class="col-form-label">offer name : </label>
+    <input type="text" class="form-control"   name="offername" #offer=ngModel [(ngModel)]="offername">
+  </div>
+  <div class="mb-3">
+    <label for="id" class="col-form-label">Date along with time (JUN 12, 2023 15:00:00): </label>
+    <input type="text" class="form-control"   name="time" #period=ngModel [(ngModel)]="time" >
+  </div>
+  <div class="mb-3">
+    <label for="price" class="col-form-label">offer rate:</label>
+    <input type="text" class="form-control" name="rate"  #rates=ngModel [(ngModel)]="rate"/>
+  </div>
+  <button type="button" (click)="applyoffer(myoffer.value)" class="btn btn-primary">Add Offer</button>
+
+</form>
+</div>
+
+

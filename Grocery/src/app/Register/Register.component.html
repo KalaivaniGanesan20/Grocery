@@ -1,0 +1,107 @@
+<section class="text-center text-lg-start">
+  <div class="container py-4 w-75">
+    <div class="row g-0 align-items-center">
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <div class="card cascading-right" style="background: hsla(0, 0%, 100%, 0.55); backdrop-filter: blur(30px);">
+          <div class="card-body p-5 shadow-5 text-center">
+            <h2 class="fw-bold mb-5">Sign up now</h2>
+            <form [formGroup]="Register" (ngSubmit)="submitform(Register)">
+              <div class="row">
+                <div class="col-md-6 mb-4">
+
+                  <div class="form-outline">
+                    <label class="form-label" for="form3Example1">First name</label>
+                    <input type="text" id="form3Example1"  formControlName="firstname" class="form-control" />
+                  </div>
+                  <div *ngIf="Register.controls['firstname'].invalid && (Register.controls['firstname'].dirty|| Register.controls['firstname'].touched)">
+                    <small  style="color:red" *ngIf="Register.controls['firstname'].errors?.['required']">Please enter first name</small>
+                    <small style="color:red" *ngIf="Register.controls['firstname'].errors?.['minlength']">Please name should be minimum 5 character</small>
+                    <small style="color:red" *ngIf="Register.controls['firstname'].errors?.['pattern']">
+                      <ul>
+                        <li>Only Alphabets</li>
+                        <li>avoid occurrence of letter more than 2</li>
+                      </ul>
+                    </small>
+                   </div>
+                </div>
+                <div class="col-md-6 mb-4">
+
+                  <div class="form-outline">
+                    <label class="form-label" for="form3Example2">Last name</label>
+                    <input type="text" id="form3Example2" formControlName="lastname" class="form-control" />
+                  </div>
+                  <div *ngIf="Register.controls['lastname'].invalid && (Register.controls['lastname'].dirty || Register.controls['lastname'].touched)">
+                    <small  style="color:red" *ngIf="Register.controls['lastname'].errors?.['required']">Please enter last name</small>
+                    <small style="color:red" *ngIf="Register.controls['lastname'].errors?.['minlength']">Please name should be minimum 1 character</small>
+                    <small style="color:red" *ngIf="Register.controls['lastname'].errors?.['pattern']">Only Alphabets</small>
+                   </div>
+                </div>
+              </div>
+
+              <!-- Email input -->
+
+              <div class="form-outline mb-4">
+                <label class="form-label" >Email address</label>
+                <input type="email" id="form3Example3" formControlName="emailid" class="form-control" />
+              </div>
+              <div *ngIf="Register.controls['emailid'].invalid && (Register.controls['emailid'].dirty||Register.controls['emailid'].touched)">
+                <small  style="color:red" *ngIf="Register.controls['emailid'].errors?.['required']">Please enter emailid</small>
+                <small style="color:red" *ngIf="Register.controls['emailid'].errors?.['email']">Please enter proper emailid</small>
+                <small style="color:red" *ngIf="Register.controls['emailid'].errors?.['pattern']">Enter emailid in specified pattern [eg : kalai@gmail.com]</small>
+              </div>
+              <!--Phone number-->
+
+              <div class="form-outline mb-4">
+                <label class="form-label" >Phone Number</label>
+                <input type="phonenumber" id="form3Example4" formControlName="phonenumber" class="form-control" />
+              </div>
+              <div *ngIf="Register.controls['phonenumber'].invalid && (Register.controls['phonenumber'].dirty||Register.controls['phonenumber'].touched)">
+                <small style="color:red" *ngIf="Register.controls['phonenumber'].errors?.['required']">please enter Phonenumber</small>
+                <small style="color:red" *ngIf="Register.controls['phonenumber'].errors?.['pattern']">please enter proper Phonenumber</small>
+                <small style="color:red" *ngIf="Register.controls['phonenumber'].errors?.['maxlength']">please enter  Phonenumber maximum 10 digit</small>
+               </div>
+
+              <!-- Password input -->
+
+              <div class="form-outline mb-4">
+                <label class="form-label" >Password</label>
+                <input type="password"  formControlName="password" class="form-control" />
+              </div>
+              <div *ngIf="Register.controls['password'].invalid &&(Register.controls['password'].dirty|| Register.controls['password'].touched)">
+                <small style="color:red" *ngIf="Register.controls['password'].errors?.['required']">Please enter password</small>
+                <small style="color:red" *ngIf="Register.controls['password'].errors?.['pattern']">
+                  <ul>
+                    <li>only lowercase</li>
+                    <li>@ , _ , . alloweded</li>
+                    <li> 0-9  1-digits mandatory</li>
+                  </ul>
+                </small>
+                <small style="color:red" *ngIf="Register.controls['password'].errors?.['minlength']">Password should be minimum 8 character</small>
+               </div>
+              <!-- Password input -->
+
+              <div class="form-outline mb-4">
+                <label class="form-label" >Confirm Password</label>
+                <input type="password"  formControlName="cpassword"  class="form-control" />
+                <div *ngIf="Register.controls['cpassword'].invalid && (Register.controls['cpassword'].dirty|| Register.controls['cpassword'].touched)">
+                  <small style="color:red" *ngIf="Register.controls['cpassword'].errors?.['required']">Please enter password</small>
+                  <small style="color:red" *ngIf="Register.controls['cpassword'].errors?.['ConfirmedValidator']">cpassword should be same as password</small>
+                 </div>
+              </div>
+
+              <!-- Submit button -->
+              <button [disabled]="!Register.valid" class="btn btn-primary btn-block mb-4">
+                Sign up
+              </button>
+
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <img src="https://www.livingwellspendingless.com/wp-content/uploads/2016/03/27413338_ml.jpg" class="w-100 h-75 rounded-4 shadow-4"
+          alt="" />
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Product details</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+  <div *ngIf="type==='product'">
+  <div class="product row" *ngFor="let product of selectedProduct">
+    <div class="col">
+      <img class="productimage"  [src]="currentImage ||'WEBAPI/wwwroot/Image/' + product.imageurl" />
+
+      <div class="row imageslider hover-container">
+      <img class="col addimage"
+      [src]="'WEBAPI/wwwroot/Image/' + product.imageurl"
+      (mouseenter)="changeImage('WEBAPI/wwwroot/Image/' + product.imageurl)"
+    />
+      <img class="col addimage "  [src]="'WEBAPI/wwwroot/Image/' + product.imageurl2"
+      (mouseenter)="changeImage('WEBAPI/wwwroot/Image/' + product.imageurl2)"
+    />
+      <img class="col addimage" [src]="'WEBAPI/wwwroot/Image/' + product.imageurl3"
+      (mouseenter)="changeImage('WEBAPI/wwwroot/Image/'+product.imageurl3)"
+    />
+    </div>
+
+   </div>
+    <div class="product-detail col">
+      <h2>{{product.productname}}</h2>
+      <div class="value">
+     <h4>Quantity  <span class="text-muted" style="margin-left:20px;">{{product.quantity|weight}}</span></h4>
+      <h4>Price <span class="text-muted " style="margin-left:65px;">{{product.price|currency:'INR':'symbol'}}</span> </h4>
+    </div>
+      <div class="row">
+        <button class="btn btn-primary add w-25" [disabled]="product.stock==0" (click)="addtocart(product)"><i class="fa fa-shopping-bag" aria-hidden="true" ></i>
+          Add to cart</button>
+      </div>
+      <i class="fa fa-truck fa-2x" aria-hidden="true"></i><span style="font-size: 20px;">Standard : Delivered in 24 hrs</span>
+    </div>
+    <div class="about">
+      <h4>About</h4>
+      <p>{{product.details}}</p>
+    </div>
+    <div class="feedback">
+      <h4>Feedback</h4>
+      <hr>
+      <div *ngFor="let feedback of productfeedback">
+      <div>
+        <img class="avatar" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyKpQUy8JP90MAZxFjU0P9bPqkUWL35fd8Ag&usqp=CAU">
+        User id :  {{feedback.userid}}
+        <p class="feedbackid">Feedback Id : {{feedback.id}}</p>
+        <p>Comment :  {{feedback.feedback}}</p>
+        Rating :
+          <i class="fa fa-star" aria-hidden="true"></i>{{feedback.productRating}}
+        </div>
+        <hr>
+      </div>
+      <div class="recipes">
+        <h4>Recipe Videos</h4>
+     </div>
+
+     </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>

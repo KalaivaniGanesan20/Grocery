@@ -1,0 +1,263 @@
+<section>
+  <div class="col-sm p-3 min-vh-100" style="margin-left:20px">
+    <div class="row">
+      <div class="col-sm">
+        <div class="card text-white mb-3 shadow-lg p-3 mb-5 bg-body rounded" style="max-width: 20rem;">
+          <div class="card-body">
+            <h4 class="card-title" style="color:rgb(73, 71, 71)">Total Products</h4>
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjmuotjIrxRJR7NAXnDIQalI_37zUS2TevhQennS5oliGDXi4q_2ze6qAKYuen5BESGy4&usqp=CAU">
+            <p class="card-text">{{TotalProduct}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm sec">
+        <div class="card text-white  mb-3 shadow-lg p-3 mb-5 bg-body rounded" style="max-width: 20rem;">
+          <div class="card-body">
+            <h4 class="card-title" style="color:rgb(73, 71, 71)">Total Categories</h4>
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4InFmR2xdQbxQUEJEil-efZJdoD_w-r2Ca1F-2ib4yyKup7nbjV2Rt2Nnx4bHvvzfDHs&usqp=CAU">
+            <p class="card-text">14</p>
+          </div>
+        </div>
+      </div>
+      <div class="col sec">
+        <div class="card text-white  mb-3 shadow-lg p-3 mb-5 bg-body rounded" style="max-width: 20rem;">
+          <div class="card-body">
+            <h4 class="card-title" style="color:rgb(73, 71, 71)">Total Customers</h4>
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKFmGlzn4da8qJj6RlFvQ8wbyE7KCU7JxptvBanOBqG30RK7Spz5EHMrgLhL83Rz1hti8&usqp=CAU">
+            <p class="card-text">{{TotalUser}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col sec">
+        <div class="card text-white  mb-3 shadow-lg p-3 mb-5 bg-body rounded" style="max-width: 20rem;">
+          <div class="card-body">
+            <h4 class="card-title" style="color:rgb(73, 71, 71)">Total Orders</h4>
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKFmGlzn4da8qJj6RlFvQ8wbyE7KCU7JxptvBanOBqG30RK7Spz5EHMrgLhL83Rz1hti8&usqp=CAU">
+            <p class="card-text">{{TotalOrder}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="row" style="margin-top:-30%;margin-left:10%;">
+  <div class="col category">
+    <div class="row"><i class="fa fa-plus-square" aria-hidden="true"><a data-bs-toggle="modal" data-bs-target="#ArraycategoryModal" data-bs-whatever="@mdo">add category array</a></i>
+    </div>
+
+    <div class="row"><i class="fa fa-plus-square" aria-hidden="true"><a data-bs-toggle="modal" data-bs-target="#ArrayBrandModal" data-bs-whatever="@mdo">add Brand array</a></i>
+    </div>
+
+    <div class="row"><i class="fa fa-plus-square" aria-hidden="true"><a data-bs-toggle="modal" data-bs-target="#ArraysubcategoryModal" data-bs-whatever="@mdo">add subcategory array</a></i>
+    </div>
+    </div>
+  <div class="col ">
+    <h2 class="row">Add Product</h2>
+    <a data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
+      <img class="row w-75 h-50 shadow p-3 mb-5 bg-body rounded"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpo4D00PvyAbNbts-z5XA8m0OZcvGWQNcHOQrDi655xcHnP_ZqyHbj8t4Xx3RmeV_8Jgw&usqp=CAU">
+    </a>
+  </div>
+  <div class="col">
+    <h2 class="row">Edit Product</h2><a href="/Editproducts">
+      <img class="row w-75 h-50 shadow p-3 mb-5 bg-body rounded"
+        src="https://img.freepik.com/premium-vector/illustration-vector-graphic-cartoon-character-system-update_516790-1238.jpg?w=2000">
+    </a>
+  </div>
+  <div class="col">
+    <h2 class="row">Apply Offer</h2><a href="/offer">
+      <img class="row w-75 h-50 shadow p-3 mb-5 bg-body rounded"
+        src="https://media.istockphoto.com/id/1226992981/vector/a-cartoon-of-2-men-pulling-a-big-shopping-cart-full-with-shopping-bag-after-order-online.jpg?s=1024x1024&w=is&k=20&c=5fJLJNtTILldSgIdFDylj_btiuSq2nPu48eeKz9GNLE=">
+    </a>
+  </div>
+  <div class="col">
+    <h2 class="row">Feedback/Queries</h2><a href="/viewfeedback">
+      <img class="row w-75 h-50 shadow p-3 mb-5 bg-body rounded"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgYvfxLZ4JmnK_MtwjyAghawmH0in0_05W7IrSMH4AtJEdSZYsVx8EHugupdmUqcxk0pg&usqp=CAU">
+    </a>
+  </div>
+</div>
+<div class="modal fade" id="ArraycategoryModal" tabindex="-2" aria-labelledby="ArraycategoryModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body">
+        <form [formGroup]="mycategory">
+          <div class="mb-3">
+            <label for="productname" class="form-label">Category Name:</label>
+            <input type="text" class="form-control" formControlName="Categoryname" />
+            <label for="productname" class="form-label">subCategory Name:</label>
+            <input type="text" class="form-control" formControlName="subcategory" />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" (click)="Addcategory(mycategory.value)" class="btn btn-primary">Add product</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="ArrayBrandModal" tabindex="-2" aria-labelledby="ArrayBrandModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body">
+        <form [formGroup]="mybrands">
+          <div class="mb-3">
+            <label for="productname" class="form-label">BrandName:</label>
+            <input type="text" class="form-control" formControlName="brandname" />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" (click)="Addbrands(mybrands.value)" class="btn btn-primary">Add product</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="ArraysubcategoryModal" tabindex="-2" aria-labelledby="ArraysubcategoryModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body">
+        <form [formGroup]="subcategory">
+          <div class="mb-3" style="color:black">
+            <label for="price" class="form-label">Category:</label>
+            <select class="form-select" formControlName="categoryid" value="select">
+              <option *ngFor="let option of allcategory" [value]="option.id">{{option.categoryName}}</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="productname" class="form-label">SubcategoryName:</label>
+            <input type="text" class="form-control" formControlName="subcategoryname" />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" (click)="Patchsubcategory(subcategory.value)" class="btn btn-primary">Add
+              product</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-2" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-body">
+        <form [formGroup]="product">
+          <div class="row">
+            <div class="mb-3 col">
+              <label for="id" class="form-label">Product ID:</label>
+              <input type="text" class="form-control" formControlName="productid" />
+            </div>
+            <div class="mb-3 col">
+              <label for="productname" class="form-label">Product Name:</label>
+              <input type="text" class="form-control" formControlName="productname" />
+            </div>
+            <div class="mb-3 col">
+              <label for="quantity" class="form-label">Quantity (in grams):</label>
+              <input type="text" class="form-control" formControlName="quantity" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="mb-3 col">
+              <label for="price" class="form-label">Price:</label>
+              <input type="text" class="form-control" formControlName="price" />
+            </div>
+
+            <div class="mb-3 col">
+              <label for="price" class="form-label">Stock available:</label>
+              <input class="form-control" formControlName="stock" />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="price" class="form-label">Product details:</label>
+            <textarea row="7" col="5" class="form-control" formControlName="details"></textarea>
+          </div>
+          <div class="row">
+            <div class="mb-3 col">
+              <label for="brand" class="form-label">Brand Name:</label>
+              <select class="form-select" formControlName="brand" value="select">
+                <option *ngFor="let brand of brands" [value]="brand.brandName">{{brand.brandName}}</option>
+              </select>
+            </div>
+            <div class="mb-3 col">
+              <label for="price" class="form-label">Category:</label>
+              <select class="form-select" formControlName="category" value="select">
+                <option *ngFor="let option of allcategory" [value]="option.categoryName">{{option.categoryName}}
+                </option>
+              </select>
+            </div>
+            <div class="mb-3 col">
+              <label for="price" class="form-label">subCategory:</label>
+              <select class="form-select" formControlName="subcategory" value="select">
+                <ng-container *ngFor="let option of allcategory">
+                  <ng-container *ngIf="option.categoryName===product.get('category')?.value">
+                    <option *ngFor="let value of option.subcategory" [value]="value.subcategoryname">
+                      {{value.subcategoryname}}</option>
+                  </ng-container></ng-container>
+              </select>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="price" class="form-label">Image:</label>
+            <input type="file" (change)="getfile($event,'image1')" formControlName="image" />
+          </div>
+          <div *ngIf="product.controls['image'].touched&& product.controls['image'].invalid">
+            <div *ngIf="product.controls['image'].errors?.['required']" style="color:red">Please choose an image.</div>
+            <div *ngIf="product.controls['image'].errors?.['invalidImageType']">Only JPEG, JPG, and PNG images are
+              allowed.</div>
+          </div>
+          <div class="row mb-3">
+            <label for="price" class="form-label">Image2:</label>
+            <input type="file" (change)="getfile($event,'image2')" formControlName="image2" />
+          </div>
+          <div *ngIf="product.controls['image2'].touched && product.controls['image2'].invalid">
+            <div *ngIf="product.controls['image2'].errors?.['required']" style="color:red">Please choose an image.</div>
+            <div *ngIf="product.controls['image2'].errors?.['invalidImageType']">Only JPEG, JPG, and PNG images are
+              allowed.</div>
+          </div>
+          <div class="row mb-3">
+            <label for="price" class="form-label">Image3:</label>
+            <input type="file" (change)="getfile($event,'image3')" formControlName="image3" />
+          </div>
+          <div *ngIf="product.controls['image3'].touched && product.controls['image3'].invalid">
+
+            <div *ngIf="product.controls['image3'].errors?.['required']" style="color:red">Please choose an image.</div>
+            <div *ngIf="product.controls['image3'].errors?.['invalidImageType']">Only JPEG, JPG, and PNG images are
+              allowed.</div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" [disabled]="!product.valid" (click)="Addproduct()" class="btn btn-primary">Add
+          product</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var exampleModal = document.getElementById('exampleModal')
+  exampleModal.addEventListener('show.bs.modal', function (event) {
+
+    var button = event.relatedTarget
+
+    var recipient = button.getAttribute('data-bs-whatever')
+
+    var modalTitle = exampleModal.querySelector('.modal-title')
+    var modalBodyInput = exampleModal.querySelector('.modal-body input')
+
+    modalTitle.textContent = 'New message to ' + recipient
+    modalBodyInput.value = recipient
+  })
+</script>
