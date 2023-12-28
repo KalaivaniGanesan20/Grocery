@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace query
 {
   [ApiController]
-       [Route("api/[controller]")]
   public class queryController:Controller
   {
     private readonly queryDb query_db;

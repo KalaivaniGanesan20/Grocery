@@ -37,17 +37,4 @@ getproductFeedbackById(id:any)
 {
   return this.http.get(this.feedbackurl+id);
 }
-postquery(query:any)
-{
-  console.log(query);
-   return this.http.post('https://localhost:7250/api/postdata',query,this.httpOption);
-}
-getquery()
-{
-   return this.http.get('https://localhost:7250/api/query');
-}
-updatequery(id:any,body:any)
-{
-  return this.http.patch('https://localhost:7250/api/update?id='+id,body);
-}
 }
